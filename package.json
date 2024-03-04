@@ -1,0 +1,23 @@
+{
+  "name": "backend-bmz",
+  "version": "1.0.0",
+  "description": "api rest para inmobiliaria",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Agusme/backend-bmz.git"
+  },
+  "keywords": [
+    "api",
+    "rest"
+  ],
+  "author": "Agustina Mena",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Agusme/backend-bmz/issues"
+  },
+  "homepage": "https://github.com/Agusme/backend-bmz#readme"
+}
