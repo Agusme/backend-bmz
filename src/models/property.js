@@ -22,6 +22,7 @@ const propertySchema = new Schema({
   },
   map: {
     type: String,
+
   },
   images: {
     type: String,
