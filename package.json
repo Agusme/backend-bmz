@@ -7,6 +7,9 @@
     "start": "npx babel-node src/index.js",
     "dev": "nodemon --exec npx babel-node src/index.js"
   },
+"engines": {
+  "node": ">=18.18.0"
+},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Agusme/backend-bmz.git"
