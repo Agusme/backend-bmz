@@ -25,8 +25,7 @@ const propertySchema = new Schema({
 
   },
   images: {
-    type: String,
-  },
+    type: Schema.Types.Mixed  },
 });
 
 const Property = mongoose.model('Property', propertySchema);
