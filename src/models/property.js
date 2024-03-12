@@ -14,7 +14,7 @@ const propertySchema = new Schema({
   bathroom: {
     type: Number,
   },
-  bedroomm: {
+  bedroom: {
     type: Number,
   },
 
