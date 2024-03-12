@@ -11,6 +11,13 @@ const propertySchema = new Schema({
     type: String,
     enum: ["venta", "alquiler"],
   },
+  bathroom: {
+    type: Number,
+  },
+  bedroomm: {
+    type: Number,
+  },
+
   location: {
     require: true,
     type: String,
@@ -22,12 +29,12 @@ const propertySchema = new Schema({
   },
   map: {
     type: String,
-
   },
   images: {
-    type: Schema.Types.Mixed  },
+    type: Schema.Types.Mixed,
+  },
 });
 
-const Property = mongoose.model('Property', propertySchema);
+const Property = mongoose.model("Property", propertySchema);
 
 export default Property;

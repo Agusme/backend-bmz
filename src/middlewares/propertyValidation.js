@@ -8,6 +8,12 @@ const propertyValidation = [
   check("typeTransaction")
     .notEmpty()
     .withMessage("El tipo de transaccion es obligatoria"),
+    check("bathroom")
+  .notEmpty()
+  .withMessage("La cantidad es obligatoria"),
+  check("bedroom")
+  .notEmpty()
+  .withMessage("La cantidad es obligatoria"),
   check("location")
   .notEmpty()
   .withMessage("La ubicacion es obligatoria"),

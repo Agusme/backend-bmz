@@ -16,6 +16,8 @@ const {typeProperty, typeTransaction, location, description, map, images}= req.b
         const newProperty = new Property({
             typeProperty,
             typeTransaction,
+            bathroom, 
+            bedroom,
             location,
             description,
             map,
