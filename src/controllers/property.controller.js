@@ -11,7 +11,7 @@ const showPropierties = async(req, res)=>{
 }
 
 const createdPropierty = async(req, res)=>{
-const {typeProperty, typeTransaction, location, description, map, images}= req.body;
+const {typeProperty, typeTransaction, location,bedroom, bathroom, description, map, images}= req.body;
     try {
         const newProperty = new Property({
             typeProperty,
