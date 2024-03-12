@@ -4,7 +4,7 @@ const propertySchema = new Schema({
   typeProperty: {
     require: true,
     type: String,
-    enum: ["casa", "departamento", "terreno", "local"],
+    enum: ["Casa", "Departamento", "Terreno", "Local"],
   },
   typeTransaction: {
     require: true,
