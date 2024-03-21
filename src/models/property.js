@@ -9,7 +9,7 @@ const propertySchema = new Schema({
   typeTransaction: {
     require: true,
     type: String,
-    enum: ["venta", "alquiler"],
+    enum: ["Venta", "Alquiler"],
   },
   bathroom: {
     type: Number,
