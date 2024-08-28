@@ -31,7 +31,7 @@ const propertySchema = new Schema({
     type: String,
   },
   images: {
-    type: Schema.Types.Mixed,
+    type: [String], 
   },
 });
 

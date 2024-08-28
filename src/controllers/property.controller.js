@@ -11,8 +11,9 @@ const showPropierties = async(req, res)=>{
 }
 
 const createdPropierty = async(req, res)=>{
-const {typeProperty, typeTransaction, location, bathroom, bedroom, description, map, images}= req.body;
-    try {
+const {typeProperty, typeTransaction, location, bathroom, bedroom, description, map}= req.body;
+const images = req.files.map(file => file.path);
+try {
         const newProperty = new Property({
             typeProperty,
             typeTransaction,
@@ -26,6 +27,8 @@ const {typeProperty, typeTransaction, location, bathroom, bedroom, description, 
     await newProperty.save()
     res.status(201).json({message:'Property created successfully'})
 } catch (error) {
+    console.log(error)
+
    res.status(400).json({message: "Error while creating the property "}) 
 }
 }
