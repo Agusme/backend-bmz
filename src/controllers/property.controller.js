@@ -44,15 +44,41 @@ const getOne = async(req, res)=>{
 
 }
 
-const updateProperty = async (req, res)=>{
+const updateProperty = async (req, res) => {
     try {
-        await Property.findByIdAndUpdate(req.params.id, req.body);
-        res.status(200).json({message:'Property updated successfully'})
-    } catch (error) {
-        res.status(400).json({message:"Error while updating the property "})
-    }
-}
+        console.log("Request Body:", req.body);  // Depuración
+        console.log("Request Files:", req.files);  // Depuración para archivos
 
+        const { id } = req.params;
+        const existingProperty = await Property.findById(id);
+
+        if (!existingProperty) {
+            return res.status(404).json({ message: "Property not found" });
+        }
+
+        // Actualiza las imágenes solo si se proporcionan nuevas
+        const updatedImages = req.files && req.files.length > 0 
+            ? req.files.map(file => file.path) 
+            : existingProperty.images;
+
+        const updatedProperty = await Property.findByIdAndUpdate(id, { 
+            ...req.body, 
+            images: updatedImages
+        }, { new: true, runValidators: true });
+
+        if (!updatedProperty) {
+            return res.status(404).json({ message: "Error updating property" });
+        }
+
+        res.status(200).json({
+            message: 'Property updated successfully',
+            updatedProperty
+        });
+    } catch (error) {
+        console.log(error);
+        res.status(400).json({ message: "Error while updating the property" });
+    }
+};
 const deleteProperty=async(req, res)=>{
     try {
         await Property.findByIdAndDelete(req.params.id)
