@@ -89,5 +89,17 @@ const deleteProperty=async(req, res)=>{
 
     }
 }
-
-export{createdPropierty, showPropierties, updateProperty ,deleteProperty, getOne }
+const searchProperties = async (req, res) => {
+    try {
+        const { typeProperty, typeTransaction } = req.query;
+        const query = {};
+        if (typeProperty) query.typeProperty = typeProperty;
+        if (typeTransaction) query.typeTransaction = typeTransaction;
+        const properties = await Property.find(query);
+        res.json(properties);
+    } catch (error) {
+        console.error("Error al buscar propiedades:", error);
+        res.status(500).json({ error: "Error while finding a property", details: error.message });
+    }
+};
+export{createdPropierty, showPropierties, updateProperty ,deleteProperty, getOne, searchProperties }

@@ -3,6 +3,7 @@ import {
   createdPropierty,
   deleteProperty,
   getOne,
+  searchProperties,
   showPropierties,
   updateProperty,
 } from "../controllers/property.controller";
@@ -21,5 +22,7 @@ router
   .get(getOne)
   .put([upload.array("images", 10)], updateProperty)
   .delete(deleteProperty);
+  router
+  router.get('/search', searchProperties);
 
 export default router;
