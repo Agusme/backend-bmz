@@ -23,6 +23,6 @@ router
   .put([upload.array("images", 10)], updateProperty)
   .delete(deleteProperty);
   router
-  router.get('/search', searchProperties);
+  router.get('/property/search', searchProperties);
 
 export default router;
